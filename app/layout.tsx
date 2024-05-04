@@ -1,8 +1,140 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const Campton = localFont({
+  src: [
+    {
+      path: '../public/Fonts/Campton/Campton-Medium.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Campton/Campton-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Campton/Campton-Black.otf',
+      weight: '900',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Campton/Campton-ExtraBold.otf',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Campton/Campton-Light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Campton/Campton-SemiBold.otf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Campton/Campton-Thin.otf',
+      weight: '100',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-campton',
+})
+
+const Larsseit = localFont({
+  src: [
+    {
+      path: '../public/Fonts/Larsseit/Larsseit-Medium.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Larsseit/Larsseit-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Larsseit/Larsseit-ExtraBold.otf',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Larsseit/Larsseit-Light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Larsseit/Larsseit-Thin.otf',
+      weight: '100',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-larsseit',
+});
+
+const Quincy = localFont({
+  src: [
+    {
+      path: '../public/Fonts/Quincy/quincycf-regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Quincy/quincycf-bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Quincy/quincycf-light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Quincy/quincycf-medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Quincy/quincycf-thin.otf',
+      weight: '100',
+      style: 'normal',
+    }
+  ],
+  variable: '--font-quincy',
+});
+
+const QuincyCF = localFont({
+  src: [
+    {
+      path: '../public/Fonts/Quincy/QuincyCF-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Quincy/QuincyCF-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Quincy/QuincyCF-Light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Quincy/QuincyCF-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/Fonts/Quincy/QuincyCF-Thin.otf',
+      weight: '100',
+      style: 'normal',
+    }
+  ],
+  variable: '--font-quincy-cf',
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +147,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+  <html lang="en" className={`${Campton.variable} ${Larsseit.variable} ${Quincy.variable} ${QuincyCF.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
